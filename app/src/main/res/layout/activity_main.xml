@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:paddingVertical="20dp"
+    android:paddingHorizontal="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/naslov"
+        android:text="AdvertManager"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:paddingVertical="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/naslov"
+        android:iconifiedByDefault="false"
+        android:queryHint="Pretraga po naslovu"/>
+
+
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/rvOglasi"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:paddingVertical="30dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/searchView"
+
+       tools:listitem="@layout/item_oglas"/>
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="50dp"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:text="Dodaj oglas"
+        app:layout_constraintTop_toBottomOf="@id/rvOglasi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        app:layout_goneMarginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
